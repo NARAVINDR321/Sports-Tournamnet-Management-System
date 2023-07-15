@@ -1,4 +1,4 @@
-# sports-tournament
+# Sports-Tournament-Management-System
 
 Sports Tournament management system
 
