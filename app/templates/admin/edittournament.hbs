@@ -1,0 +1,70 @@
+<form  class="container-login100" style="/*! background: -o-linear-gradient(-135deg, #c850c0, #4158d0); *//*! background: -moz-linear-gradient(-135deg, #c850c0, #4158d0); *//*! background: linear-gradient(-135deg, #c850c0, #4158d0); */display: block;"{{action "signUp" true on="submit"}}>
+  
+  <fieldset style="margin-left: 350px;margin-right: 390px;margin-top: 50px;">
+    <h3 class="form-head" style="margin-top: 50px;margin-bottom: 30px;margin-left: 200px;">Edit Tournament details</h3>
+
+    
+    {{input id="tournament_name" class="input100 ember-text-field ember-view" name="name" value=username placeholder="tournament_name" required=true}}<br><br>
+    {{input  id="sports_name" class="input100 ember-text-field ember-view" name="pwd" value=pwd placeholder="sports_name" required=true}}<br><br>
+    
+    {{input id="limits" type="number" class="input100 ember-text-field ember-view" name="limits" value=age placeholder="limits" required=true}}<br><br>
+   <p style="font-size: 20px;margin-left: 30px;">Team type</p>
+          <input type="radio" id="event_type" class="radioBtnClass" name="numbers" value="1" style="margin-left: 40px;"/>Single<br/>
+            <input type="radio" id="event_type" class="radioBtnClass" name="numbers" value="0" style="margin-left: 40px;"/>Team<br/>
+            <p style="font-size: 20px;margin-left: 30px;">Status of Tournament</p>
+            <input type="radio" id="status" class="radioBtnClass" name="numbers" value="0" style="margin-left: 40px;"/>Yet to Start<br/>
+            <input type="radio" id="status" class="radioBtnClass" name="numbers" value="1" style="margin-left: 40px;"/>Started<br/>
+            
+
+          
+    <br><br>
+    
+    <button type="submit" class="login100-form-btn" {{action 'editTournament'}} style="width: 25%;margin-bottom: 20px;;margin-left: 40px;">Add Tournament</button>
+    <button {{action 'Toadmin'}} class="login100-form-btn" style="width: 25%;margin-bottom: 10px;margin-left: 40px;">Cancel</button>
+
+  </fieldset>
+</form>
+
+
+
+
+{{!-- <form class="form-class pop-up" >
+    <fieldset style="margin-top: 90px;margin-left: 90px;margin-right: 90px;margin-bottom: 20px;padding :0px ">
+        <h3 class="form-head">Edit Tournament</h3>
+
+        {{input id="tournament_name" placeholder="Enter tournament_name" required=true}}<br><br>
+         {{input id="sports_name" placeholder="Enter the sports_name" required=true}}<br><br>
+        {{input type="number" id="limits" min="1" max="15" placeholder="Enter the team limit" required=true}}<br><br>
+        
+       
+        
+       
+        
+          <p>Team type</p>
+          <input type="radio" id="event_type" class="radioBtnClass" name="numbers" value="1" />Single<br/>
+            <input type="radio" id="event_type" class="radioBtnClass" name="numbers" value="0" />Team<br/>
+            <p>Status of Tournament</p>
+            <input type="radio" id="status" class="radioBtnClass" name="numbers" value="0" />Yet to Start<br/>
+            <input type="radio" id="status" class="radioBtnClass" name="numbers" value="1" />Started<br/>
+            
+
+          
+    <br><br>
+       
+        <button type="submit" {{action 'editTournament'}} class="btn btn-signup">Edit Tournament</button>
+        <button  class="btn btn-signup" {{action 'Toadmin'}}>Cancel</button>
+        <br>
+        <br>
+    </fieldset>
+</form>
+
+
+<div class="blur-div"></div> --}}
+
+{{outlet}}
+
+{{outlet}}
+
+
+
+{{outlet}}

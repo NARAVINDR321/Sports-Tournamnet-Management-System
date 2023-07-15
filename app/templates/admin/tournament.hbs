@@ -1,0 +1,68 @@
+
+
+<div class="table-data" style="margin-left: 70px;">
+  <table>
+     <caption>Tournament Details </caption>
+    <tbody id="myTable">
+        
+    <tr  class="bg-info">
+        <th>Tournament</th>
+        <th>Sports Name</th>
+        <th>Event type</th>
+        <th>Limits</th>
+        <th>Status</th>
+         <th>Start Date</th>
+        <th>End Date</th>
+        
+        <th>Edit</th>
+        <th>Delete</th>
+      
+    </tr>
+   
+    
+      {{log "model"}}
+      {{log model}}
+     
+
+      
+
+        {{#each model as |tournaments|}}
+        <tr>
+        <td>{{tournaments.tournament_name}}</td>
+       <td>{{tournaments.sports_name}}</td>
+       {{#if tournaments.event_type}}
+        <td>Team Participation</td>
+        {{else}}
+        <td>Single Participation</td>
+        {{/if}}
+
+        
+        <td>{{tournaments.limits}}</td>
+        {{#if tournaments.status}}
+        <td>Started</td>
+        {{else}}
+        <td>Yet to Start</td>
+        {{/if}}
+        <td>{{tournaments.startDate}}</td>
+          <td>{{tournaments.endDate}}</td>
+        
+        <td><button {{action "Toedittournament" tournaments.tournament_id}}>Edit</button></td>
+        <td><button {{action "Todeletetournament" tournaments.tournament_id}}>Delete</button></td>
+        
+         </tr>
+        {{/each}}
+   
+    
+    
+    </tbody>
+
+  </table>
+
+</div>
+{{!-- {{/if}} --}}
+{{outlet}}
+
+
+
+
+{{outlet}}

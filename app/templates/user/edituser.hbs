@@ -1,0 +1,31 @@
+<form  class="container-login100" style="/*! background: -o-linear-gradient(-135deg, #c850c0, #4158d0); *//*! background: -moz-linear-gradient(-135deg, #c850c0, #4158d0); *//*! background: linear-gradient(-135deg, #c850c0, #4158d0); */display: block;"{{action "signUp" true on="submit"}}>
+  
+  <fieldset style="margin-left: 350px;margin-right: 390px;margin-top: 50px;">
+    <h3 class="form-head" style="margin-top: 50px;margin-bottom: 30px;"> You can edit your profile here </h3>
+
+    
+    {{input id="name" class="input100 ember-text-field ember-view" name="name" value=username placeholder="name" required=true}}<br><br>
+    {{input type="pwd" id="pwd" class="input100 ember-text-field ember-view" name="pwd" value=pwd placeholder="pwd" required=true}}<br><br>
+    
+    {{input id="age" type="number" class="input100 ember-text-field ember-view" name="age" value=age placeholder="age" required=true}}<br><br>
+    {{input id="address" name="address" class="input100 ember-text-field ember-view" value=address placeholder="address" required=true}}<br><br>
+    {{input id="blood_group" name="blood_group" class="input100 ember-text-field ember-view" value=blood_group placeholder="blood_group" required=true}}<br><br>
+
+    
+    
+   
+    
+    <button type="submit" {{action 'editUser'}} class="login100-form-btn" style="width: 25%;margin-bottom: 20px;;margin-left: 40px;">Edit Details</button>
+    <button {{action 'Toadmin'}} class="login100-form-btn" style="width: 25%;margin-bottom: 10px;margin-left: 40px;">Cancel</button>
+
+  </fieldset>
+</form>
+
+{{outlet}}
+
+
+
+
+
+
+

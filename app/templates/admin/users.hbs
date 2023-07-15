@@ -1,0 +1,42 @@
+{{log tournament}}
+
+{{!-- {{#if tournament}} --}}
+<div class="table-data">
+  <table>
+     <caption>User Details </caption>
+    <tbody id="myTable">
+     
+    <tr  class="bg-info">
+        <th>name</th>
+        <th>age</th>
+        <th>address</th>
+        <th>blood_group</th>
+    </tr>
+    
+    
+    
+      {{log "model"}}
+      {{log model}}
+
+     
+       
+        {{#each model as |user|}}
+        {{#if user.role}}
+        <tr>
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.address}}</td>
+        <td>{{user.blood_group}}</td>
+       
+        
+         </tr>
+          {{/if}}
+        {{/each}}
+        
+    
+    
+    </tbody>
+
+  </table>
+</div>
+{{!-- {{/if}} --}}

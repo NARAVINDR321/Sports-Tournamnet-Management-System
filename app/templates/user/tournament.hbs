@@ -1,0 +1,117 @@
+
+<div class="table-data" style="margin-left: 70px;">
+  <table>
+    <caption>Tournament Details</caption>
+    {{!-- <caption>Tournament Details</caption> --}}
+    <tbody id="myTable">
+        
+    <tr  class="bg-info">
+        <th class="bgth">Tournament</th>
+        <th>Sports Name</th>
+        <th>Event type</th>
+        <th>Limits</th>
+        <th>status</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Register</th>
+      
+    </tr>
+   
+    
+      {{log "model"}}
+      {{log model}}
+      
+
+      
+
+        {{#each model as |tournaments|}}
+        <tr>
+        <td>{{tournaments.tournament_name}}</td>
+        <td>{{tournaments.sports_name}}</td>
+
+        {{#if tournaments.event_type}}
+        <td>Team Participation</td>
+        {{else}}
+        <td>Single Participation</td>
+        {{/if}}
+
+        
+        <td>{{tournaments.limits}}</td>
+        {{#if tournaments.status}}
+       <td>Started</td>
+        {{else}}
+        <td>Yet to Start</td>
+        {{/if}}
+         <td>{{tournaments.startDate}}</td>
+          <td>{{tournaments.endDate}}</td>
+
+        
+        {{#if tournaments.event_type}}
+        <td><button class="open-button" {{action "Toregisterteam" tournaments.tournament_id}} onclick="openForm()">Register</button></td>
+        {{else}}
+        <td><button  {{action "Toregistersingle" tournaments.tournament_id}} >Register </button></td>
+       {{/if}}
+  </tr>
+   {{/each}}
+
+    <div class="form-popup" id="myForm">
+        <form class="form-container" style="/*! max-width: ; */">
+        <h1>Team Registration</h1>
+
+            <label for="Team"><b>Team Name</b></label>
+
+            
+            <select id="team">
+            {{#each teams as |team|}}
+            <option value={{team.team_id}}>{{team.team_name}}</option>
+            {{/each}}
+           <option value="0">create a new team </option>
+            
+            
+            
+            
+            </select>
+
+            <option value="0">If u want to create a new team </option>
+            {{input id="teamname" placeholder="new team name" required=true }}
+           
+
+            
+            
+            <button type="submit"  {{action "Toselectedteam" }} class="btn">Register</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+        </div>
+      
+        <script>
+            
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+    </tbody>
+  </table>
+</div>
+  
+
+
+{{outlet}}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

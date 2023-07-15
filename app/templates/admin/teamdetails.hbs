@@ -1,0 +1,62 @@
+
+
+
+<div class="table-data">
+  <table>
+
+     <caption>Team Details </caption>
+    <tbody id="myTable">
+        
+    <tr  class="bg-info">
+        <th>ID</th>
+        <th>team_name</th>
+        {{!-- <th>status</th> --}}
+        {{!-- <th>Edit</th>
+        <th>Delete</th> --}}
+      
+    </tr>
+   
+    
+      {{log "model"}}
+      {{log model}}
+
+      
+
+        {{#each model as |teams|}}
+        <tr>
+        <td>{{teams.team_id}}</td>
+        <td>{{teams.team_name}}</td>
+       
+        {{!-- {{#if teams.status}}
+        <th>Started</th>
+        {{else}}
+        <th>Yet to Start</th>
+        {{/if}} --}}
+        
+        {{!-- <th><button {{action "Toedittournament" tournaments.tournament_id}}>Edit</button></th>
+        <th><button {{action "Todeletetournament" tournaments.tournament_id}}>Delete</button></th>
+         --}}
+         </tr>
+        {{/each}}
+   
+    
+    
+    </tbody>
+
+  </table>
+
+</div>
+{{!-- {{/if}} --}}
+{{outlet}}
+
+
+
+
+{{outlet}}
+
+
+
+
+
+
+{{outlet}}
